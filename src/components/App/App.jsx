@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import { coordinates, APIkey } from "../../utils/constants";
+import { coordinates, apiKey, defaultClothingItems } from "../../utils/constants";
 import Header from "../Header/Header.jsx";
 import Main from "../Main/Main.jsx";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
@@ -15,6 +15,7 @@ function App() {
   });
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
+  const [clothingItems, setClothingItems] = useState(defaultClothingItems);
 
   const handleCardClick = (card) => {
     setActiveModal("preview");
@@ -30,7 +31,7 @@ function App() {
   };
 
   useEffect(() => {
-    getWeather(coordinates, APIkey)
+    getWeather(coordinates, apiKey)
       .then((data) => {
         const filteredData = filterWeatherData(data);
         setWeatherData(filteredData);
@@ -58,7 +59,11 @@ function App() {
     <div className="page">
       <div className="page__content">
         <Header onAddClick={handleAddClick} weatherData={weatherData} />
-        <Main weatherData={weatherData} handleCardClick={handleCardClick} />
+        <Main
+          weatherData={weatherData}
+          handleCardClick={handleCardClick}
+          clothingItems={clothingItems}
+        />
         <Footer />
       </div>
 
