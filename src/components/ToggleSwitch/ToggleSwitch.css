@@ -1,0 +1,82 @@
+/*
+ * ToggleSwitch
+ *
+ * Figma spec: 56×28px total with 2px black border, border-radius 20px.
+ *
+ * How it works:
+ *   - The pill is 56px wide. The black circle is exactly 28×28 — half the width,
+ *     full height — so it fills one complete half of the pill.
+ *   - overflow: hidden + border-radius clips the circle into a clean half-pill shape,
+ *     with no visible gap between the circle edge and the pill border.
+ *   - The circle slides from left: 0 (F active) to left: 28px (C active).
+ *   - F and C labels sit at z-index 2, above the circle, turning white via
+ *     inline style in JSX when their side is active.
+ */
+
+.toggle-switch {
+  width: 56px;
+  height: 28px;
+  border: 2px solid #000;
+  border-radius: 20px;
+  overflow: hidden;        /* clips the circle to the pill shape — no crescent gaps */
+  cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
+}
+
+/* Hidden checkbox — drives the :checked selector for the slide transition */
+.toggle-switch__checkbox {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Black sliding circle.
+ * 28×28 = exactly half the pill width × full pill height.
+ * Positioned flush at top-left (no inset) so it fills the left half completely.
+ * overflow: hidden on the parent clips the rounded edges into the pill shape.
+ */
+.toggle-switch__circle {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  background-color: #000;
+  border-radius: 50%;
+  top: 0;
+  left: 0;                 /* F active: fills left half */
+  transition: left 0.2s ease;
+  z-index: 1;
+}
+
+/* C active: slide circle to fill the right half */
+.toggle-switch__checkbox:checked ~ .toggle-switch__circle {
+  left: 28px;
+}
+
+/* F and C letter labels */
+.toggle-switch__text {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+  color: #000;
+  z-index: 2;              /* sits above the circle so white color shows */
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Centre each letter within its 28px half of the pill */
+.toggle-switch__text_F {
+  left: 8px;
+}
+
+.toggle-switch__text_C {
+  right: 8px;
+}

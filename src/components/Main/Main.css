@@ -1,3 +1,27 @@
+/* Main page — weather card + filtered clothing grid */
+
+main {
+  /* Bottom padding creates the gap between the last card row and the footer,
+     matching the Figma where the footer sits ~20px below the content area. */
+  padding-bottom: 20px;
+}
+
+.cards {
+  /* Vertical breathing room around the clothing grid section */
+  padding: 0;
+  margin: 0;
+}
+
+.cards__text {
+  /* "Today is X° / You may want to wear:" label */
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #000;
+  margin: 0 0 20px 0;
+}
+
 .cards__list {
   display: flex;
   flex-wrap: wrap;

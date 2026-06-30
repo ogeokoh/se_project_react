@@ -1,0 +1,47 @@
+/* ClothesSection — right panel on the Profile page showing all garments */
+
+.clothes-section {
+  flex: 1;
+}
+
+.clothes-section__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.clothes-section__title {
+  margin: 0;
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  color: #000;
+}
+
+.clothes-section__add-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  color: #000;
+  padding: 0;
+}
+
+.clothes-section__add-btn:hover {
+  opacity: 0.6;
+}
+
+/* Reuses the same grid layout as the cards section on Main */
+.clothes-section__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 17px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}

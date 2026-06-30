@@ -14,11 +14,13 @@
   border-radius: 20px 20px 0 0;
 }
 
+/* Footer: item info on left, delete button on right */
 .modal__footer {
   padding: 20px;
   display: flex;
-  flex-direction: column;
-  gap: 8px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   background-color: #fff;
 }
 
@@ -38,6 +40,30 @@
   line-height: 20px;
   margin: 0;
   color: #000;
+}
+
+.modal__footer-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Delete item button — red text, no background */
+.modal__delete-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #ff4d4f;
+  padding: 0;
+  white-space: nowrap;
+}
+
+.modal__delete-btn:hover {
+  opacity: 0.7;
 }
 
 .modal__close_type_image {

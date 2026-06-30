@@ -2,7 +2,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 24px 40px;
+  /* Figma: footer text row is 20px tall with minimal top/bottom breathing room.
+     Horizontal padding matches the 40px left offset shown in Figma. */
+  padding: 16px 0;
   background: transparent;
   font-family: "Cabinet Grotesk", Arial, sans-serif;
 }

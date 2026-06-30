@@ -1,3 +1,9 @@
+/* Remove default anchor styling from React Router Link elements in the header */
+.header a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .header {
   display: flex;
   align-items: center;
@@ -12,8 +18,19 @@
   margin: 0;
 }
 
+/*
+ * Right-side group: toggle + add button + user info.
+ * margin-left: auto pushes the entire group to the far right,
+ * leaving logo and date anchored on the left — matching the Figma layout.
+ */
+.header__controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-left: auto;
+}
+
 .header__add-clothes-btn {
-  margin: 0 20px 0 auto;
   background: none;
   border: none;
   cursor: pointer;

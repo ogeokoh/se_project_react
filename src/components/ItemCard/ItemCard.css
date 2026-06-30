@@ -1,16 +1,40 @@
+/*
+ * ItemCard
+ *
+ * Figma card dimensions: ~325×328px
+ * Border: 1px solid rgba(0,0,0,0.30)  (Group 78 border color #000000 at 30% opacity)
+ * Border-radius: 20px  (visible rounded corners in the Figma design)
+ * Background: white so the border and radius are visible
+ */
+
 .card {
   width: 323px;
   position: relative;
   display: flex;
   justify-content: center;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  overflow: hidden;      /* clips the image to the rounded corners */
+  cursor: pointer;
 }
 
+/* Card name label overlaid at the top-left of the image */
 .card__name {
   position: absolute;
   top: 15px;
   margin: 0;
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #000;
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 2px 8px;
+  border-radius: 4px;
 }
 
 .card__image {
   width: 100%;
+  display: block;        /* removes inline gap below image */
+  object-fit: cover;
 }

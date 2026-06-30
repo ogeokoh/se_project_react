@@ -1,3 +1,13 @@
+/**
+ * ItemCard.jsx
+ *
+ * A single clothing card displayed in the cards grid on Main and ClothesSection.
+ * Clicking the image opens ItemModal via the onCardClick handler from the parent.
+ *
+ * Note: items fetched from json-server use `imageUrl` for the image path.
+ * The fallback to `item.link` maintains backward-compat with legacy constants data.
+ */
+
 import "./ItemCard.css";
 
 function ItemCard({ item, onCardClick }) {
@@ -11,7 +21,7 @@ function ItemCard({ item, onCardClick }) {
       <img
         onClick={handleCardClick}
         className="card__image"
-        src={item.link}
+        src={item.imageUrl || item.link}
         alt={item.name}
       />
     </li>

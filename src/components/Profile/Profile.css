@@ -1,0 +1,17 @@
+/* Profile page layout: sidebar on the left, clothes grid on the right */
+
+.profile {
+  display: flex;
+  align-items: flex-start;
+  /* flex-start (not the stretch default) keeps SideBar pinned to the TOP
+     of the section, level with the "Your items" heading — matching Figma's
+     Group 122, which sits at Top: 119px rather than centered against the
+     full height of the clothing grid. Without this, the default `stretch`
+     makes .sidebar match ClothesSection's full height, and since .sidebar
+     centers its own content, the avatar/name drift down to roughly the
+     middle of the grid instead of staying at the top. */
+  gap: 40px;
+  padding: 40px 0;
+  /* No min-height — let the content determine the height naturally.
+     A forced min-height would push the footer far down the page. */
+}

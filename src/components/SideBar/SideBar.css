@@ -1,0 +1,31 @@
+/*
+ * SideBar — left panel on the Profile page showing user info.
+ *
+ * Figma (Group 122): 229×56px — avatar (56×56) on the left,
+ * name text to the right of it on the same line. Row layout.
+ */
+
+.sidebar {
+  display: flex;
+  flex-direction: row;   /* avatar LEFT, name RIGHT — matches Figma horizontal group */
+  align-items: center;
+  gap: 16px;
+}
+
+.sidebar__avatar {
+  /* Figma: Ellipse 18 — Width: 56px, Height: 56px */
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;        /* prevent squishing */
+}
+
+.sidebar__username {
+  margin: 0;
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 22px;
+  color: #000;
+}

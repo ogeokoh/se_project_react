@@ -1,0 +1,81 @@
+/* DeleteConfirmationModal — confirmation card styles
+ *
+ * Figma "Confirm popup" (Group 156): 670 x 280px box, 1px solid border at
+ * #000000 30% opacity. Internal vertical rhythm measured from the box's
+ * top edge:
+ *   - message text starts 60px from the top, is 367px wide, 48px tall (2 lines)
+ *   - "Yes, delete item" starts 148px from the top (a 40px gap after the text)
+ *   - "Cancel" starts 196px from the top (a 24px gap after "Yes, delete item")
+ *   - 60px remains below Cancel to the bottom of the box (symmetric with the top)
+ * That rhythm (60 / 48 / 40 / 24 / 24 / 24 / 60 = 280) is reproduced below
+ * with padding + margins instead of hand-placed absolute positions.
+ *
+ * Note: width/height/padding/border are written as a compound selector
+ * (.modal__content.modal__content_type_confirm) so they reliably win over
+ * the shared .modal__content base rule in ModalWithForm.css regardless of
+ * CSS source order, instead of depending on import order to win the tie.
+ */
+
+.modal__content.modal__content_type_confirm {
+  width: 670px;
+  height: 280px;
+  box-sizing: border-box;
+  padding: 60px 0;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal__confirm-text {
+  width: 367px; /* forces the same 2-line wrap shown in Figma */
+  margin: 0 0 40px; /* 40px gap down to "Yes, delete item" */
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px; /* 48px box height / 2 lines */
+  color: #000;
+  text-align: center;
+}
+
+.modal__confirm-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px; /* gap between "Yes, delete item" and "Cancel" */
+}
+
+/* Destructive action — prominent red text */
+.modal__confirm-delete {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  color: #ff4d4f;
+  padding: 0;
+}
+
+.modal__confirm-delete:hover {
+  opacity: 0.7;
+}
+
+/* Safe action — Figma's dev panel lists this text with the same 700-weight
+   style as "Yes, delete item" */
+.modal__confirm-cancel {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  color: #000;
+  padding: 0;
+}
+
+.modal__confirm-cancel:hover {
+  opacity: 0.6;
+}
