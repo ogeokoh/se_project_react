@@ -30,7 +30,7 @@
 .modal__confirm-text {
   width: 367px; /* forces the same 2-line wrap shown in Figma */
   margin: 0 0 40px; /* 40px gap down to "Yes, delete item" */
-  font-family: "Cabinet Grotesk", Arial, sans-serif;
+  font-family: "Inter", Arial, sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 24px; /* 48px box height / 2 lines */
@@ -50,7 +50,7 @@
   background: none;
   border: none;
   cursor: pointer;
-  font-family: "Cabinet Grotesk", Arial, sans-serif;
+  font-family: "Inter", Arial, sans-serif;
   font-size: 16px;
   font-weight: 700;
   line-height: 24px;
@@ -68,7 +68,7 @@
   background: none;
   border: none;
   cursor: pointer;
-  font-family: "Cabinet Grotesk", Arial, sans-serif;
+  font-family: "Inter", Arial, sans-serif;
   font-size: 16px;
   font-weight: 700;
   line-height: 24px;

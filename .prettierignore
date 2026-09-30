@@ -1,0 +1,3 @@
+# Prettier should not reformat normalize.css — it is a third-party
+# vendor file and reformatting it would create unnecessary diffs.
+src/vendor/normalize.css

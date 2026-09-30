@@ -6,7 +6,7 @@
      Horizontal padding matches the 40px left offset shown in Figma. */
   padding: 16px 0;
   background: transparent;
-  font-family: "Cabinet Grotesk", Arial, sans-serif;
+  font-family: "Inter", Arial, sans-serif;
 }
 
 .footer__text {
