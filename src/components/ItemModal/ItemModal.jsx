@@ -18,8 +18,8 @@ import closeIcon from "../../assets/group-119.svg";
 
 function ItemModal({ isOpen, onClose, card, onDeleteClick }) {
   // Close when clicking outside the modal card (on the dark overlay)
-  const handleOverlay = (e) => {
-    if (e.target === e.currentTarget) {
+  const handleOverlay = (event) => {
+    if (event.target === event.currentTarget) {
       onClose();
     }
   };

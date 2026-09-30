@@ -21,8 +21,8 @@ import closeIcon from "../../assets/group-119.svg";
 
 function DeleteConfirmationModal({ isOpen, onClose, onDeleteConfirm }) {
   // Close when clicking the dark overlay outside the card
-  const handleOverlay = (e) => {
-    if (e.target === e.currentTarget) {
+  const handleOverlay = (event) => {
+    if (event.target === event.currentTarget) {
       onClose();
     }
   };

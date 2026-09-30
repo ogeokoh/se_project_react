@@ -23,8 +23,8 @@ function ModalWithForm({
   onSubmit,
 }) {
   // Close when clicking the dark overlay (not the modal box itself)
-  const handleOverlay = (e) => {
-    if (e.target === e.currentTarget) {
+  const handleOverlay = (event) => {
+    if (event.target === event.currentTarget) {
       onClose();
     }
   };

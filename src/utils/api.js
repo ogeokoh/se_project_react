@@ -18,9 +18,10 @@ const baseUrl = "http://localhost:3001";
 
 /**
  * Shared response handler — resolves with JSON on 2xx, rejects otherwise.
+ * Exported so weatherAPI.js can reuse the same check.
  * @param {Response} res - raw fetch Response object
  */
-const handleResponse = (res) => {
+export const handleResponse = (res) => {
   if (res.ok) {
     return res.json();
   }

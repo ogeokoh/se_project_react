@@ -22,10 +22,10 @@ function useForm(initialValues) {
 
   /**
    * Generic change handler — works for text, url, and radio inputs.
-   * Reads e.target.name and e.target.value to update the matching key.
+   * Reads event.target.name and event.target.value to update the matching key.
    */
-  const handleChange = (e) => {
-    const { name, value } = e.target;
+  const handleChange = (event) => {
+    const { name, value } = event.target;
     setValues((prev) => ({ ...prev, [name]: value }));
   };
 

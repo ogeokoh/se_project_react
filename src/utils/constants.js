@@ -1,3 +1,7 @@
+/**
+ * Each `condition` must match OpenWeather's weather[0].main lowercased
+ * (see filterWeatherData in weatherAPI.js), e.g. "clear" or "clouds".
+ */
 export const weatherOptions = [
   {
     day: true,
@@ -11,7 +15,7 @@ export const weatherOptions = [
   },
   {
     day: true,
-    condition: "cloudy",
+    condition: "clouds",
     url: new URL("../assets/day/cloudy.png", import.meta.url).href,
   },
   {
@@ -21,7 +25,7 @@ export const weatherOptions = [
   },
   {
     day: false,
-    condition: "cloudy",
+    condition: "clouds",
     url: new URL("../assets/night/cloudy.png", import.meta.url).href,
   },
 ];

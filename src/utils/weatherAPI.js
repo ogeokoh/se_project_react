@@ -15,23 +15,21 @@
  *   weatherData.temp with the active unit string ("F" or "C").
  */
 
+import { handleResponse } from "./api";
+
 /**
  * Fetch current weather for the given coordinates.
- * Resolves with raw API JSON; rejects with an error string on non-2xx status.
+ * Resolves with raw API JSON; rejects with an error string on non-2xx status
+ * (via the shared handleResponse from api.js).
  *
  * @param {{ latitude: number, longitude: number }} coords
- * @param {string} APIkey — OpenWeather API key (from constants.js)
+ * @param {string} apiKey — OpenWeather API key (from constants.js)
  * @returns {Promise<Object>} raw OpenWeather response
  */
-export const getWeather = ({ latitude, longitude }, APIkey) => {
+export const getWeather = ({ latitude, longitude }, apiKey) => {
   return fetch(
-    `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=${APIkey}`,
-  ).then((res) => {
-    if (res.ok) {
-      return res.json();
-    }
-    return Promise.reject(`Error: ${res.status}`);
-  });
+    `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=${apiKey}`,
+  ).then(handleResponse);
 };
 
 /**
@@ -42,7 +40,7 @@ export const getWeather = ({ latitude, longitude }, APIkey) => {
  *     city:      string,           // "Houston"
  *     temp:      { F: number, C: number },
  *     type:      "hot"|"warm"|"cold",  // drives clothing filter in Main
- *     condition: string,           // "clear", "cloudy", etc. (for WeatherCard image)
+ *     condition: string,           // "clear", "clouds", etc. (for WeatherCard image)
  *     isDay:     boolean,          // true between sunrise and sunset
  *   }
  *

@@ -30,8 +30,8 @@ const AddItemModal = ({ isOpen, onAddItem, onCloseModal }) => {
    * handler in App.jsx. handleReset is passed along so App can call it
    * only after the API POST succeeds (preventing premature resets).
    */
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = (event) => {
+    event.preventDefault();
     onAddItem(values, handleReset);
   };
 
@@ -78,6 +78,8 @@ const AddItemModal = ({ isOpen, onAddItem, onCloseModal }) => {
        * Weather type radio group — controlled via the `checked` prop.
        * Using `checked` (not just `value`) is required so that calling
        * handleReset reliably unchecks all buttons when values.weather === "".
+       * `required` stops the form submitting with no weather type, since items
+       * with an empty weather value would never appear on the Main page.
        */}
       <fieldset className="modal__radio-buttons">
         <legend className="modal__legend">Select the weather type:</legend>
@@ -91,6 +93,7 @@ const AddItemModal = ({ isOpen, onAddItem, onCloseModal }) => {
             value="hot"
             checked={values.weather === "hot"}
             onChange={handleChange}
+            required
           />
           Hot
         </label>
@@ -104,6 +107,7 @@ const AddItemModal = ({ isOpen, onAddItem, onCloseModal }) => {
             value="warm"
             checked={values.weather === "warm"}
             onChange={handleChange}
+            required
           />
           Warm
         </label>
@@ -117,6 +121,7 @@ const AddItemModal = ({ isOpen, onAddItem, onCloseModal }) => {
             value="cold"
             checked={values.weather === "cold"}
             onChange={handleChange}
+            required
           />
           Cold
         </label>
