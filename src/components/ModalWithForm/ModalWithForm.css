@@ -9,11 +9,22 @@
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  /*
+   * Fade in/out: opacity animates over 0.5s. On close, visibility waits
+   * until the fade finishes (0.5s delay) so the modal doesn't vanish
+   * abruptly; .modal_opened removes the delay so it appears immediately.
+   */
   visibility: hidden;
+  opacity: 0;
+  transition:
+    visibility 0s linear 0.5s,
+    opacity 0.5s linear;
 }
 
 .modal_opened {
   visibility: visible;
+  opacity: 1;
+  transition-delay: 0s;
 }
 
 .modal__content {

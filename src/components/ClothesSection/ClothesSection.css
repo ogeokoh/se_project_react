@@ -4,9 +4,10 @@
   flex: 1;
 }
 
+/* "Your items" and "+ Add new" sit side by side, as in the Figma */
 .clothes-section__header {
   display: flex;
-  justify-content: space-between;
+  gap: 20px;
   align-items: center;
   margin-bottom: 20px;
 }
